@@ -53,14 +53,12 @@ Create a new folder on your computer and open a console/terminal there.
 Type in your first Angular Cli command using **ng** to invoke its project creation Wizard:
 
 ```sh
-ng new open-events-front –-style=scss --prefix=oevents
-Would you like to add Angular routing? (y/N) N
+ng new open-events-front --style=scss --prefix=oevents
 ```
 
 - **ng** is the *Angular Cli* command. 
 - **style**: specifies the file extension or preprocessor to use for style files, in our case we have selected SCSS for [Sass styles](https://sass-lang.com/).
 - **prefix**:  specifies the prefix to apply to all generated selectors in the project. We will use *oevents*.
-- We don't want to add a *Router* just now so reply with **N** to the question raised.
 
 <br/>
 

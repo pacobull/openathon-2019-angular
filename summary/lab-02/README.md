@@ -314,10 +314,6 @@ After saving all the changes, the application should update the event details ac
 
 <br/>
 
-[< Lab 01 - Starting a New Angular Project](../lab-01) | [Lab 03 - Routing Basics >](../lab-03)
-
-
-
 <p align="center">
     <img src="../../boring-theory-1/resources/header.png">
 </p>

@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../boring-theory-1/resources/header.png">
+    <img src="../../boring-theory-1/resources/header.png">
 </p>
 
 # Lab 01 - Starting a New Angular Project
@@ -214,5 +214,5 @@ And edit *toolbar/toolbar.component.html* to apply the primary color:
 
 
 <p align="center">
-    <img src="../boring-theory-1/resources/header.png">
+    <img src="../../boring-theory-1/resources/header.png">
 </p>

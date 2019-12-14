@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../boring-theory-1/resources/header.png">
+    <img src="../../boring-theory-1/resources/header.png">
 </p>
 
 # Lab 02 - Angular Basics
@@ -140,7 +140,7 @@ Edit app.component.html and add:
 <oevents-event-list></oevents-event-list>
 ```
 <p align="center">
-    <img src="./resources/eventList.png" border="1">
+    <img src="../../lab-02/resources/eventList.png" border="1">
 </p>
 
 Import the mat-card component in app.module.ts
@@ -201,7 +201,7 @@ Edit event-list.component.scss as follow.
 ```
 After saving all your changes you should see the event list and the first event’s details in your browser.
 <p align="center">
-    <img src="./resources/eventListDetails01.png" border="1">
+    <img src="../../lab-02/resources/eventListDetails01.png" border="1">
 </p>
 
 Let’s refactor the code to separate our event details from the even list component.
@@ -307,7 +307,7 @@ Add the new event-details that we have created to be displayed in event-list.com
 
 After saving all the changes, the application should update the event details according the selected event. 
 <p align="center">
-    <img src="./resources/eventListDetails02.png" border="1">
+    <img src="../../lab-02/resources/eventListDetails02.png" border="1">
 </p>
 
 # Resources
@@ -319,5 +319,5 @@ After saving all the changes, the application should update the event details ac
 
 
 <p align="center">
-    <img src="../boring-theory-1/resources/header.png">
+    <img src="../../boring-theory-1/resources/header.png">
 </p>

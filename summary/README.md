@@ -8,7 +8,7 @@
 
 ### 1. Visual Studio Code
 
-<img src="./boring-theory-1/resources/vscode.png" width="100">
+<img src="../boring-theory-1/resources/vscode.png" width="100">
 
 [Click here](https://code.visualstudio.com/) to download and install. 
 
@@ -16,7 +16,7 @@
 
 ### 2. Node.js
 
-<img src="./boring-theory-1/resources/node.png" width="180">
+<img src="../boring-theory-1/resources/node.png" width="180">
 
 [Click here](https://nodejs.org/en/download/) to download and install. 
 
@@ -24,7 +24,7 @@
 
 ### 3. Angular CLI
 
-<img src="./boring-theory-1/resources/cli.png" width="300">
+<img src="../boring-theory-1/resources/cli.png" width="300">
 
 ```sh
 npm install -g @angular/cli

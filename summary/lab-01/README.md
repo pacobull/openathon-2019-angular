@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../boring-theory-1/resources/header.png">
+    <img src="../../boring-theory-1/resources/header.png">
 </p>
 
 # Lab 01 - Starting a New Angular Project
@@ -20,10 +20,6 @@
 ng new open-events-front --style=scss --prefix=oevents
 ```
 
-- **ng** is the *Angular Cli* command. 
-- **style**: specifies the file extension or preprocessor to use for style files, in our case we have selected SCSS for [Sass styles](https://sass-lang.com/).
-- **prefix**:  specifies the prefix to apply to all generated selectors in the project. We will use *oevents*.
-
 <br/>
 
 #### Step 2. Execute the project
@@ -35,8 +31,8 @@ ng serve
 
 <br/>
 
-
 ## Project Folder Structure
+
 <br/>
 
 ## Create a new component
@@ -214,5 +210,5 @@ And edit *toolbar/toolbar.component.html* to apply the primary color:
 
 
 <p align="center">
-    <img src="../boring-theory-1/resources/header.png">
+    <img src="../../boring-theory-1/resources/header.png">
 </p>

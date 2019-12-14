@@ -29,12 +29,10 @@
 ```sh
 npm install -g @angular/cli
 ```
-    
-> Depending on your computer and operating system, some dependencies will not be installed and you can get warnings during installation process. In the same terminal or a new one run: 
-> ```sh
-> ng v
-> ```
-> If everything is fine, a list of Angular CLI and Node version should appear.
+
+```sh
+ng v
+```
 
 <br/>
 

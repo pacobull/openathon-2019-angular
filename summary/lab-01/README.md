@@ -47,7 +47,6 @@ ng generate component landing-page
 
 Delete the content from *landing-page.component.html* and copy and paste the following code on it:
 ```javascript
-...
 <div class="container">
   <div class="title">
     <h1>Open Events App</h1>
@@ -62,7 +61,6 @@ Delete the content from *landing-page.component.html* and copy and paste the fol
     </p>
   </div>
 </div>
- ...
 
 ```
 Now, we want to change the styles. Copy and paste the following code in *landing-page.component.scss*

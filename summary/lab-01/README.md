@@ -184,9 +184,7 @@ And edit *toolbar/toolbar.component.html* to apply the primary color:
 ...
 
 ```
-
-
-[< Main Principles, Solid Practises and Code Quality](../boring-theory-2) | [Lab 02 - Angular Basics >](../lab-02)
+<br/>
 
 
 <p align="center">

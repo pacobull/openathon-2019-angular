@@ -271,7 +271,7 @@ To configure our project to use **Angular Material**, we need to install the fol
 - HammerJS
 
 ```sh
- npm install --save @angular/material@7.3.7 @angular/cdk@7.3.7 @angular/animations@7.2.14 hammerjs@2.0.8
+ npm install --save @angular/material @angular/cdk @angular/animations hammerjs
 ```
 
 <br/>

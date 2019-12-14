@@ -98,7 +98,7 @@ Finally, Delete the content from *app.component.html* (remember, our project **R
 ## Angular Material 
 
 ```sh
- npm install --save @angular/material@7.3.7 @angular/cdk@7.3.7 @angular/animations@7.2.14 hammerjs@2.0.8
+ npm install @angular/material @angular/cdk @angular/animations hammerjs
 ```
 
 <br/>
@@ -143,8 +143,6 @@ Now let’s add a toolbar in our application. Create a new component named **too
 ```sh
  ng generate component toolbar
 ```
-This command creates the new component, creates the folder *toolbar** and puts all the components files on it. As well, it imports and adds the component to the declaration section in  *app.module.ts* file.
-
 Now, edit *toolbar/toolbar.component.html* and delete its content and add the following:
 ```javascript
 <mat-toolbar>
@@ -155,15 +153,7 @@ Now, edit *toolbar/toolbar.component.html* and delete its content and add the fo
 </mat-toolbar>
 ```
 
-We have added links to the toolbar.
-
 Finally, all we need is to tell Angular that we want this toolbar in the landing page: edit *app.component.html* and add oevents-toolbar.
-
-Try to do it on your own.
-
-
-<details>
- <summary>Problems? See here the solution:</summary>
 
 ```javascript
 <div class="body">
@@ -172,23 +162,15 @@ Try to do it on your own.
 </div>
 
 ```
-</p>
-  </details>
 
 <br/>
 
-
-After saving all the changes, we should see our toolbar.
-
 <p align="center">
-    <img src="./resources/landingPageToolbar.png">
+    <img src="../../lab-01/resources/landingPageToolbar.png">
 </p>
 
 
 ### Adding a theme
-Finally, we want to be lazy and use a built-in Material theme in our application.
-
-
 Import the following style into *src/styles.scss* (the global styles file):
 
 ```javascript

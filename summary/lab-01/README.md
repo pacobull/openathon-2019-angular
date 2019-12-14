@@ -20,10 +20,6 @@
 ng new open-events-front --style=scss --prefix=oevents
 ```
 
-- **ng** is the *Angular Cli* command. 
-- **style**: specifies the file extension or preprocessor to use for style files, in our case we have selected SCSS for [Sass styles](https://sass-lang.com/).
-- **prefix**:  specifies the prefix to apply to all generated selectors in the project. We will use *oevents*.
-
 <br/>
 
 #### Step 2. Execute the project
@@ -35,8 +31,8 @@ ng serve
 
 <br/>
 
-
 ## Project Folder Structure
+
 <br/>
 
 ## Create a new component

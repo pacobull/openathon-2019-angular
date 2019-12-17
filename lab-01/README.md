@@ -55,6 +55,7 @@ Type in your first Angular Cli command using **ng** to invoke its project creati
 ```sh
 ng new open-events-front --style=scss --prefix=oevents
 ```
+[[Commit 1]](https://github.com/pacobull/open-events-front/commit/4be9cc390828fce5a4420d070e901fd9e416ce15)
 
 - **ng** is the *Angular Cli* command. 
 - **style**: specifies the file extension or preprocessor to use for style files, in our case we have selected SCSS for [Sass styles](https://sass-lang.com/).

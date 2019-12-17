@@ -352,9 +352,9 @@ Try to do it on your own.
   <oevents-toolbar></oevents-toolbar>
   <oevents-landing-page></oevents-landing-page>
 </div>
-
 ```
 </details>
+
 [[Commit 11]](https://github.com/pacobull/open-events-front/commit/0de81965e69820b2e3b0fc772ce64d733361d0ae)
 
 After saving all the changes, we should see our toolbar.

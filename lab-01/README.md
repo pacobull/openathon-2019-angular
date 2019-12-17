@@ -292,6 +292,7 @@ We want also to use **Material Design Icons**. Edit *index.html* (remember, our 
 ...
 ```
 [[Commit 7]](https://github.com/pacobull/open-events-front/commit/0b66da06bd492192d9fed325ec2b1fc264482551)
+
 We are going to add now some nice Angular Materials components so we need to import them into *app.module.ts* again:
 
 ```javascript
@@ -322,6 +323,7 @@ Now let’s add a toolbar in our application. Create a new component named **too
  ng generate component toolbar
 ```
 [[Commit 9]](https://github.com/pacobull/open-events-front/commit/5d9c97fdabd408142eb5ddb34a5c893644578a6e)
+
 This command creates the new component, creates the folder *toolbar** and puts all the components files on it. As well, it imports and adds the component to the declaration section in  *app.module.ts* file.
 
 Now, edit *toolbar/toolbar.component.html* and delete its content and add the following:
@@ -352,11 +354,8 @@ Try to do it on your own.
 </div>
 
 ```
-</p>
-  </details>
-
-<br/>
-
+</details>
+[[Commit 11]](https://github.com/pacobull/open-events-front/commit/0de81965e69820b2e3b0fc772ce64d733361d0ae)
 
 After saving all the changes, we should see our toolbar.
 
@@ -373,8 +372,9 @@ Import the following style into *src/styles.scss* (the global styles file):
 
 ```javascript
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
-
 ```
+[[Commit 12]](https://github.com/pacobull/open-events-front/commit/cb7555eb1fda3c9ed1b27c40e93a6ef309869a93)
+
 And edit *toolbar/toolbar.component.html* to apply the primary color:
 
 ```javascript
@@ -382,8 +382,8 @@ And edit *toolbar/toolbar.component.html* to apply the primary color:
 ...
 
 ```
+[[Commit 13]](https://github.com/pacobull/open-events-front/commit/9b8e709b51a4b1b861fc7075fea495a3c265b1ed)
 
-<br/>
 Check your localhost and the result should be:
 <br/>
 <br/>

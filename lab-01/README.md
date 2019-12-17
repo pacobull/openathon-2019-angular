@@ -278,7 +278,7 @@ To configure our project to use **Angular Material**, we need to install the fol
 ```sh
  npm install @angular/material @angular/cdk @angular/animations hammerjs
 ```
-
+[[Commit 6]](https://github.com/pacobull/open-events-front/commit/3dd0bff538144d8386ad869a08e2946478f40034)
 <br/>
 
 We want also to use **Material Design Icons**. Edit *index.html* (remember, our project **Main View**) file and include the following into the **head** section:
@@ -290,9 +290,8 @@ We want also to use **Material Design Icons**. Edit *index.html* (remember, our 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 ...
-
 ```
-
+[[Commit 7]](https://github.com/pacobull/open-events-front/commit/0b66da06bd492192d9fed325ec2b1fc264482551)
 We are going to add now some nice Angular Materials components so we need to import them into *app.module.ts* again:
 
 ```javascript
@@ -315,12 +314,14 @@ import 'hammerjs';
 ...
 
 ```
+[[Commit 8]](https://github.com/pacobull/open-events-front/commit/0c84792c8463cf07de9834f7bc9b60cf69f19751)
 
 ### Adding a toolbar
 Now let’s add a toolbar in our application. Create a new component named **toolbar**:
 ```sh
  ng generate component toolbar
 ```
+[[Commit 9]](https://github.com/pacobull/open-events-front/commit/5d9c97fdabd408142eb5ddb34a5c893644578a6e)
 This command creates the new component, creates the folder *toolbar** and puts all the components files on it. As well, it imports and adds the component to the declaration section in  *app.module.ts* file.
 
 Now, edit *toolbar/toolbar.component.html* and delete its content and add the following:
@@ -332,6 +333,7 @@ Now, edit *toolbar/toolbar.component.html* and delete its content and add the fo
   <a mat-button>Login</a>
 </mat-toolbar>
 ```
+[[Commit 10]](https://github.com/pacobull/open-events-front/commit/8881168b192f7d3823f708e8de1b4a95d30742ef)
 
 We have added links to the toolbar.
 

@@ -218,6 +218,8 @@ Delete the content from *landing-page.component.html* and copy and paste the fol
  ...
 
 ```
+[[Commit 3]](https://github.com/pacobull/open-events-front/commit/db8c044c6919c6becf5ff6992473e13d97b9dd32)
+
 Now, we want to change the styles. Copy and paste the following code in *landing-page.component.scss*
 
 ```javascript
@@ -240,6 +242,7 @@ Now, we want to change the styles. Copy and paste the following code in *landing
 }
 
 ```
+[[Commit 4]](https://github.com/pacobull/open-events-front/commit/474baa1db6573b9ad76cea3ea983d9b5ccf8666b)
 
 Finally, Delete the content from *app.component.html* (remember, our project **Root Component**) and copy and paste the following code on it.
 
@@ -248,8 +251,8 @@ Finally, Delete the content from *app.component.html* (remember, our project **R
 <div class="body">
   <oevents-landing-page></oevents-landing-page>
 </div>
-
 ```
+[[Commit 5]](https://github.com/pacobull/open-events-front/commit/89ae9f3920f812ef71e958bef9bff4d864968018)
 > Notice that we are using our component selector as a HTML tag.
 
 After those changes, our new landing page should appear in the browser like:

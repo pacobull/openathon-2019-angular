@@ -155,6 +155,7 @@ When Angular Project Wizard creates the project, a component is created for us. 
 ```sh
 ng generate component landing-page
 ```
+[[Commit 2]](https://github.com/pacobull/open-events-front/commit/b1b5370d5751063eba57230dba1dbe2444327809)
 
 A new folder with the component files has been created under *src/app/landing-page*.
 

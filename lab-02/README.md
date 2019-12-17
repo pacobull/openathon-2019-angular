@@ -111,8 +111,9 @@ export class Event {
   description: string;
   addedBy: string;
 }
-
 ```
+
+[[Commit 15]](https://github.com/pacobull/open-events-front/commit/4cd07baa2ae533fa0febe5703224dea1daff5696)
 
 Copy and paste the following code in event-list.component.ts. As you can see, we are importing our even model. And we make use of it in the 'EVENTS' constant, which is an array of events. Besides we create the 'selectedEvent' variable and set it to be by default the first value from the 'EVENTS' array.
 
@@ -183,8 +184,10 @@ export class EventListComponent implements OnInit {
   }
 
 }
- 
 ```
+
+[[Commit 16]](https://github.com/pacobull/open-events-front/commit/0d86b35601aae7677dd93aa5e090698e455e4e52)
+
 In order to display the event list, we will use the <a href="https://material.angular.io/components/list/overview">mat-list</a> component from Angular Material. 
 Delete the content from event-list.component.html and copy and paste the following code.
 
@@ -196,8 +199,10 @@ Delete the content from event-list.component.html and copy and paste the followi
     </mat-list-item>
   </mat-list>
 </div>
-
 ```
+
+[[Commit 17]](https://github.com/pacobull/open-events-front/commit/36ae80cd810474122ecffb2b96d631c3c03cc574)
+
 Add the following in event-list.component.scss
 
 ```css
@@ -205,8 +210,10 @@ Add the following in event-list.component.scss
     display: flex;
     justify-content: center;
 }
-
 ```
+
+[[Commit 18]](https://github.com/pacobull/open-events-front/commit/f763ddc018de16dc5b1e8e74151971d49afa2ae0)
+
 Edit app.component.html and add:
 
 ```html

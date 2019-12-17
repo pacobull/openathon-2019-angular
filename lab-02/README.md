@@ -89,8 +89,9 @@ Add a new component named event-list
 
 ```sh
 ng g component event-list
-
 ```
+[[Commit 14]](https://github.com/pacobull/open-events-front/commit/4d75568acae01972c48d2b4c53e957be8e0d271e)
+
 
 Now we are going to create the event model. In this file we are going to define the event's properties, it is basically a blueprint that will help us when we create new variables of type event.
 

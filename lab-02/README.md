@@ -219,6 +219,8 @@ Edit app.component.html and add:
 ```html
 <oevents-event-list></oevents-event-list>
 ```
+[[Cpmmit 19]](https://github.com/pacobull/open-events-front/commit/5dda889e794a6c4bf9861a5845ec0a5315b2c78c)
+
 <p align="center">
     <img src="./resources/eventList.png" border="1">
 </p>
@@ -236,6 +238,9 @@ import { MatCardModule } from '@angular/material/card';
   . . . 
 
 ```
+
+[[Commit 20]](https://github.com/pacobull/open-events-front/commit/b93977ae230b8caefecbe5285519f8e58729cef6)
+
 Edit event-list.component.html to use mat-card and display the event details as following:
 
 ```html
@@ -265,9 +270,9 @@ Edit event-list.component.html to use mat-card and display the event details as 
   </mat-card>
 
 </div>
-
-
 ```
+
+[[Çommit 21]](https://github.com/pacobull/open-events-front/commit/9fd3a6d177d863714fe306d4593697964c02881e)
 
 Edit event-list.component.scss as follow.
 
@@ -279,8 +284,10 @@ Edit event-list.component.scss as follow.
 #eventDetails{
   max-width: 600px;
 }
-
 ```
+
+[[Commit 22]](https://github.com/pacobull/open-events-front/commit/93b881cbe0e7669bc12124fbf80ce6e25c22a653)
+
 After saving all your changes you should see the event list and the first event’s details in your browser.
 <p align="center">
     <img src="./resources/eventListDetails01.png" border="1">
@@ -294,6 +301,7 @@ Create a new component named event-details.
 ```sh
 ng g component event-details
 ```
+[[Commit 23]](https://github.com/pacobull/open-events-front/commit/374e98794d4cf87bfcc1bc4b82e91212cedcf43b)
 
 Remove the following from event-list-component.html
 ```html
@@ -312,8 +320,9 @@ Remove the following from event-list-component.html
       </p>
     </mat-card-content>
   </mat-card>
-
 ```
+
+[[Commit 24]](https://github.com/pacobull/open-events-front/commit/d03f0dea46f9565c84f5ecb84c7b458f5d92d677)
 
 Copy and paste this code in event-details.componet.html
 ```html
@@ -335,14 +344,18 @@ Copy and paste this code in event-details.componet.html
 
 ```
 
+[[Commit 25]](https://github.com/pacobull/open-events-front/commit/0c99c57e9703922b010b1468ffe714479eee8627)
+
 In event-list.component.html add a click event as follow 
 
 ```html
 ...
 <mat-list-item *ngFor="let event of events" (click)="onSelectEvent(event)" >
 ... 
-
 ```
+
+[[Commit 26]](https://github.com/pacobull/open-events-front/commit/d11f8083c760d3ecfea9352773a1c01b27232c4e)
+
 Then in event-list.component.ts add the ‘onSelectEvent’ function.
 
 ```javascript
@@ -357,6 +370,8 @@ export class EventListComponent implements OnInit {
 
 ```
 
+[[Commit 27]](https://github.com/pacobull/open-events-front/commit/5f4964ac1540e1dd176b5996c5a123c16e6fbb1c)
+
 In event-details.component.ts, import and add then input decorator to retrieve the event passed by event-list.
 
 ```javascript
@@ -370,6 +385,9 @@ export class EventDetailsComponent implements OnInit {
 }
 
 ```
+
+[[Commit 28]](https://github.com/pacobull/open-events-front/commit/ce8baf8401be828048b1bdba46bb1d9a3c2c5205)
+
 In event-details.component.scss add the following.
 
 ```javascript
@@ -378,6 +396,8 @@ In event-details.component.scss add the following.
 }
 
 ```
+
+[[Commit 29]](https://github.com/pacobull/open-events-front/commit/3860f97815feb535742eea01c06dd6afa8cd94f6)
 
 Add the new event-details that we have created to be displayed in event-list.component.html
 
@@ -388,6 +408,8 @@ Add the new event-details that we have created to be displayed in event-list.com
 </div>
 
 ```
+
+[[Commit 30]](https://github.com/pacobull/open-events-front/commit/53ef85c739923c3edb0db5f7bebd9f9b56aa94b7)
 
 After saving all the changes, the application should update the event details according the selected event. 
 <p align="center">

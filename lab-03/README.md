@@ -33,11 +33,15 @@ ng g module profile
 ng g module login
 ```
 
+[[Commit 31]](https://github.com/pacobull/open-events-front/commit/e44b68cfca8842dfc4670b5767d93ae4c4d1f601)
+
 > **_Side Note:_**  How do you decide what feature is a major feature candidate to host a Feature Module? It depends. Sometimes it's clear since the feature is a main feature (as "events") and sometimes you think that a feature will grow a lot in the future... In this case, we can argue about the need of Feature Modules in "login" and "profile" features, but we will include them for the sake of the example.
 
 Now we have to move the events components to the events folder because this will be their correct location in our new structure, so move "event-list" and "event-details" to "events" folder. We have to modify some import paths to consider the new location of those files. In "event-list.component.ts" and "event-details.component.ts" files we need to change the import sentence from "../models/event" to "../../models/event" to reflect the correct location.
 
 Also, we need to modify the import paths in app-module.ts where the components are registered, but instead of doing it, we are going to introduce a new feature very common in an Angular app: the Shared Module.
+
+[[Commit 32]](https://github.com/pacobull/open-events-front/commit/e44b68cfca8842dfc4670b5767d93ae4c4d1f601)
 
 ## Shared Module
 
@@ -48,6 +52,7 @@ First, we are going to create a folder named "shared" and a new module shared.mo
 ```sh
 ng g module shared
 ```
+[[Commit 33]](https://github.com/pacobull/open-events-front/commit/d1f406eb1e8c6622475e8b84fbecbfbfad570121)
 
 > **_Side Note:_**  You can see some best practices about the Shared Module in https://angular.io/guide/styleguide#shared-feature-module
 
@@ -85,6 +90,8 @@ import "hammerjs";
 export class SharedModule {}
 ```
 
+[[Commit 34]](https://github.com/pacobull/open-events-front/commit/20d339ba0c18f3261fda492eda95cdc813fb2905)
+
 Now, we will modify the "app.module.ts" and the "events.module.ts" for ordering the new composition of our app.
 
 For app.module.ts:
@@ -103,14 +110,12 @@ import { ProfileModule } from "./profile/profile.module";
 import { AppComponent } from "./app.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ToolbarComponent,
-    PageNotFoundComponent
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -124,6 +129,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 })
 export class AppModule {}
 ```
+
+[[Commit 35]](https://github.com/pacobull/open-events-front/commit/cf77075fd841cc2ac8e9c690531117897370916f)
 
 For events.module.ts:
 
@@ -140,10 +147,13 @@ import { EventDetailsComponent } from "./event-details/event-details.component";
 
 @NgModule({
   imports: [CommonModule, SharedModule],
-  declarations: [EventListComponent, EventDetailsComponent]
+  declarations: [EventListComponent, EventDetailsComponent],
+  exports: [EventListComponent, EventDetailsComponent]
 })
 export class EventsModule {}
 ```
+
+[[Commit 36]](https://github.com/pacobull/open-events-front/commit/4b4cf9891ad126268cbf64e50300777f08ddcf21)
 
 As you can see, the events module has their own components, the app module has the minimum necessary and the shared module have the shared components. 
 
@@ -158,23 +168,19 @@ The Angular Router we will use is not part of Angular Core module (where we are 
 We will create a new file named "app-routing.module.ts" in the app folder with next content:
 
 ```javascript
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { LandingPageComponent } from "./landing-page/landing-page.component";
-import { EventListComponent } from "./events/event-list/event-list.component";
-import { ProfileComponent } from "./profile/profile.component";
-import { LoginComponent } from "./login/login.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { EventListComponent } from './events/event-list/event-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: "home", component: LandingPageComponent },
-  { path: "events", component: EventListComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "login", component: LoginComponent },
+  { path: 'home', component: LandingPageComponent },
+  { path: 'events', component: EventListComponent },
 
-  { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "**", component: PageNotFoundComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -189,7 +195,9 @@ Now, the interesting part. We define a constant typed as "Routes" (imported befo
 
 Also, we have configured a "Not found" page (a new component that you can make to practice) and an empty path a little different than others. This object is saying "when in the URL we don't have any path, we activate the home page".  For example, if we have a domain www.mypage.com if we are navigating to this root path ("/") www.mypage.com, the app redirects us to www.mypage.com/home in order to show the main page (or whatever we want).
 
-> **_Side Note:_**  Remember to create your "Not Found" component.
+> **_Side Note:_**  Remember to create your "Not Found" component with "ng g component page-not-found --module=app-routing".
+
+[[Commit 37]](https://github.com/pacobull/open-events-front/commit/c06d12733f93642ab343b3ba9de5e833f71fc94d)
 
 The last step will be to import the routes, register them in the RouterModule and export it because, as we know, we need to import it in the main app.module.ts.
 
@@ -204,13 +212,15 @@ and in the imports array:
 ```javascript
   imports: [
     BrowserModule,
-    AppRoutingModule, <---- NEW
+    AppRoutingModule, // <---- NEW
     SharedModule,
     EventsModule,
     LoginModule,
     ProfileModule
   ],
   ```
+
+[[Commit 38]](https://github.com/pacobull/open-events-front/commit/d74eae67c32860a08de0d98df453f5acd99355d0)
 
   > **_Side Note:_**  The order of the imports matters. You have to import first the modules used by other modules at the bottom of the list.
 
@@ -223,15 +233,52 @@ When a component is activated using their path, where can we see its html view? 
     <router-outlet></router-outlet>
   </div>
   ```
+[[Commit 39]](https://github.com/pacobull/open-events-front/commit/affb069cca9696d79268b9be662a897ea9a901f1)
 
 Note that we've deleted both event-list and landing-page elements because these components are now managed by the route module. We keep the toolbar since it will be visible through the whole application. The new components activated from the route module through their url/paths will be accessible below the `<router-outlet></router-outlet>` tag.
 
-Our next step is to create the remaining components: login and profile. To do this, and insert them in their folders, we need to execute:
+Our next step is to create the remaining components: login and profile. To do this, and insert them in their folders, we need to execute this commands from app folder:
 
 ```
-ng g component /login
-ng g component /profile
+cd login
+ng g component login
+cd ../profile
+ng g component profile
+cd ..
 ```
+
+[[Commit 40]](https://github.com/pacobull/open-events-front/commit/f703c7a2dda8514fdccbdcfc1e2085149da3e54a)
+
+Now you need add the path to the new components in the app-routig.module.ts
+
+```
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { EventListComponent } from './events/event-list/event-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { LoginComponent } from './login/login/login.component';
+
+const routes: Routes = [
+  { path: 'home', component: LandingPageComponent },
+  { path: 'events', component: EventListComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent },
+
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  declarations: [PageNotFoundComponent]
+})
+export class AppRoutingModule {}
+```
+
+[[Commit 41]](https://github.com/pacobull/open-events-front/commit/18cafa984e4131e8b4fad5fa3a61fcf6c6e1c628)
 
 ## Router Link
 
@@ -247,6 +294,8 @@ To do this, we need a RouterLink directive as an attribute of our anchor tags of
   <a mat-button routerLink="/login" routerLinkActive="activeLink">Login</a>
 </mat-toolbar>
 ```
+
+[[Commit 42]](https://github.com/pacobull/open-events-front/commit/bbb09a342810fc24ea6c0496766725f75b77d474)
 
 As you can see, we write the path we want to reach as values of routerLink attribute. The Router will search this path in our router module and will activate the component set up in their object from `routes` array (previously seen).
 Notice now the routerLinkActive attribute: this attribute indicates what CSS class will be applied when the URL matches with the path configured in this tag.
@@ -267,6 +316,8 @@ export interface Event {
     addedBy: string;
 }
 ```
+
+[[Commit 43]](https://github.com/pacobull/open-events-front/commit/1d8ecd693a851fc6bb99079472924addbd9cb242)
 
 This change not only follows the Angular best practices (https://angular.io/guide/styleguide#interfaces), also we use the correct definition of the model. It's better to define the models as interfaces to make it lighter and efficient.
 

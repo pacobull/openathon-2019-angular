@@ -272,7 +272,7 @@ Edit event-list.component.html to use mat-card and display the event details as 
 </div>
 ```
 
-[[Çommit 21]](https://github.com/pacobull/open-events-front/commit/9fd3a6d177d863714fe306d4593697964c02881e)
+[[Commit 21]](https://github.com/pacobull/open-events-front/commit/9fd3a6d177d863714fe306d4593697964c02881e)
 
 Edit event-list.component.scss as follow.
 

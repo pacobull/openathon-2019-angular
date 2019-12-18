@@ -204,6 +204,8 @@ Create a new file *events.json* in the *assets* folder with next content (it hav
 ]
 ```
 
+[[Commit 47]](https://github.com/pacobull/open-events-front/commit/2d3afac18cb96cd9369d24027fb01a96c81bf110)
+
 Now, import the service in the *core.module.ts* file:
 
 ```javascript
@@ -220,6 +222,8 @@ import { EventService } from "./event.service";
 })
 export class CoreModule {}
 ```
+
+[[Commit 48]](https://github.com/pacobull/open-events-front/commit/0c71593d9f6c95557b189d3037783ea927e72a0f)
 
 Note that we need the HttpClientModule in the *imports* object since this is the  module where resides *HttpClient* and *HttpHeaders* we are using in the service.
 
@@ -245,14 +249,12 @@ import { ProfileModule } from "./profile/profile.module";
 import { AppComponent } from "./app.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ToolbarComponent,
-    PageNotFoundComponent
+    ToolbarComponent
   ],
   imports: [
     CoreModule, // <--- NEW
@@ -268,6 +270,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 })
 export class AppModule {}
 ```
+
+[[Commit 49]](https://github.com/pacobull/open-events-front/commit/a4d07d5693440e7633d2b4199c33d80485593697)
 
 ## Transform data from HttpClient
 
@@ -355,7 +359,9 @@ JSON-server gives us a very simple way to create a REST API server. It is a *Nod
 npm install json-server -g 
 ```
 * Configure the json-server. Choose one location in your computer and create a new folder called 'json-server'. Then go to this 
- <a href="./db.json">Download db.json file </a> and move it into the folder that we just have created. 
+ <a href="./db.json">Download db.json file </a> and move it into the folder that we just have created.
+ 
+ [[Commit 50]]()
  
 * Open the command line and go into the json-server folder. Now we are going to run our server with the following command: 
 
@@ -387,7 +393,7 @@ Now that we have our server running, we have to make some changes in our code. F
 
 ```javascript
 export const environment = {
-  production: true,
+  production: false,
   apiURL: "http://localhost:3000/"
 };
 ```
@@ -405,6 +411,8 @@ In event.service.ts let's change the API call.
     );
   }
 ```
+
+[[Commit 50]](https://github.com/pacobull/open-events-front/commit/d8f158316187ee7a325b93621aae8f70560cae9b)
 
 Save all the changes, the application should display now the event data.
 

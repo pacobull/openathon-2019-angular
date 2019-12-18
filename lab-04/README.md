@@ -361,8 +361,6 @@ npm install json-server -g
 * Configure the json-server. Choose one location in your computer and create a new folder called 'json-server'. Then go to this 
  <a href="./db.json">Download db.json file </a> and move it into the folder that we just have created.
  
- [[Commit 50]]()
- 
 * Open the command line and go into the json-server folder. Now we are going to run our server with the following command: 
 
 ```sh

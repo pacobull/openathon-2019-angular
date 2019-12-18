@@ -46,6 +46,8 @@ ng g module core
 ng g service core/event
 ```
 
+[[Commit 44]](https://github.com/pacobull/open-events-front/commit/e69ebaeea3a11706030bbd5ae9acc102280be3d4)
+
 This will create a *core* folder and the service file, *event.service.ts*. We've named the module as *core* following the <a href="https://angular.io/guide/styleguide#overall-structural-guidelines" target="_blank">Angular Style Guide</a>.
 
 Now, paste this code to the *event.service.ts* file:
@@ -70,6 +72,8 @@ export class EventService {
   }
 }
 ```
+
+[[Commit 45]](https://github.com/pacobull/open-events-front/commit/637521a30de0146bc708e1dec16f972eee2eb41f)
 
 There are some interesting things in this code. Let's analyse it slowly.
 
@@ -142,6 +146,8 @@ export class EventListComponent implements OnInit {
   }
 }
 ```
+
+[[Commit 46]](https://github.com/pacobull/open-events-front/commit/518023c2077cc9e318c6c20cd0690737a3b1e2dc)
 
 We've deleted the hardcoded events array (now they will come from our .json file witch emulates the API data). After that, we have imported our new service *EventService* and injected it through the constructor naming it *eventService*.
 

@@ -75,6 +75,9 @@ exports: [
 </div>
 ```
 
+[[Commit 53]](https://github.com/pacobull/open-events-front/commit/5604eb70b7ea84a9616d982890c5a4af543a7765)
+
+
 * copy and paste the following in event-list.component.scss:
 
 ```javascript
@@ -101,6 +104,8 @@ table {
 }
 ```
 
+[[Commit 54]](https://github.com/pacobull/open-events-front/commit/92806ed625a187aa4f08ec040f1eb9903b940cce)
+
 * Add the columns names that will be displayed in the table headers. In event-list.component.ts change the code as follow:
 
 
@@ -109,6 +114,8 @@ export class EventListComponent implements OnInit {
   ...
   displayedColumns: string[] = ["Date", "Location", "Title"];
 ```
+
+[[Commit 55]](https://github.com/pacobull/open-events-front/commit/4ea5b6e4c8b3676d48155b572524b888598b0040)
 
 * Add the eventDetails route in app-routing.module.ts
 ```javascript
@@ -124,6 +131,8 @@ const routes: Routes = [
   ...
 
 ```
+
+[[Commit 56]](https://github.com/pacobull/open-events-front/commit/ec454f9f91933e115ed1aeacbd782df3c7116098)
 
 * Now we need to import RouterModule in our shared.moudule.ts
 
@@ -143,12 +152,12 @@ import { RouterModule } from "@angular/router";
   ]
 ```
 
-
+[[Commit 57]](https://github.com/pacobull/open-events-front/commit/bbe5499c12fee8920bd20f986896168e85947305)
 
 * As we said, we are going to change the event-details.component.html to use a mat-card and include a button to edit the event. Also, we are adding the 'Edit Event' button that will redirect us to a new view.
 ```javascript
 <div class="container">
-  <div id="event-card-details">
+  <div id="event-card-details" *ngIf="event">
     <div id="edit-event-btn">
       <button mat-raised-button color="primary" [routerLink]="['/addEditEvent/', event.id]">
         Edit Event
@@ -234,8 +243,7 @@ export class EventDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private eventService: EventService,
-    private router: Router
+    private eventService: EventService
   ) {}
 
   ngOnInit() {
@@ -248,6 +256,7 @@ export class EventDetailsComponent implements OnInit {
 }
 ```
 
+[Commit 58]](https://github.com/pacobull/open-events-front/commit/8982d04040d6f18fc221f51cedc486b025e76247)
 
 * Save all the changes that we have made. You should be able to get the event list, click in one of them and see its details in a new view.
 

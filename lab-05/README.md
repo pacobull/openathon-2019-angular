@@ -256,7 +256,7 @@ export class EventDetailsComponent implements OnInit {
 }
 ```
 
-[Commit 58]](https://github.com/pacobull/open-events-front/commit/8982d04040d6f18fc221f51cedc486b025e76247)
+[[Commit 58]](https://github.com/pacobull/open-events-front/commit/8982d04040d6f18fc221f51cedc486b025e76247)
 
 * Save all the changes that we have made. You should be able to get the event list, click in one of them and see its details in a new view.
 

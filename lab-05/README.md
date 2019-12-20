@@ -16,6 +16,8 @@ Moreover, we are going to see how to send parameters through routing and how to 
 	json-server --watch db.json
 ```
 
+[[Commit 51]](https://github.com/pacobull/open-events-front/commit/b56bb6bbbc571bf35e05645bb70c2ec050192086)
+
 ## Read Event Details
 
 Let's refactor our event list and details in a more proper way. We are going to split them, first we will use a table for the event list using mat-table from Angular Material. When the user clicks in one event, we will be using routerLink to redirect them to the new event details view 
@@ -36,6 +38,9 @@ exports: [
     MatTableModule,
     ...
 ```
+
+[[Commit 52]](https://github.com/pacobull/open-events-front/commit/aba2163e52e3f3ea66cde5dd1a5d80d004efa8a0)
+
 
 * Edit event-list.component.html
 

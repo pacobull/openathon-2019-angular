@@ -300,6 +300,8 @@ import { Event } from "../models/event";
   }
 ```
 
+[[Commit 59]](https://github.com/pacobull/open-events-front/commit/bc5d377fb980cc855a6789980b1ccb0decef353f)
+
 * Add the MatFormFieldModule and MatInputModule from Material in the shared.module.ts
 
 ```javascript
@@ -326,12 +328,15 @@ import { MatInputModule } from "@angular/material/input";
   ...
 ```
 
+[[Commit 60]](https://github.com/pacobull/open-events-front/commit/355da777418cf1f7ff8a513f155d4bb4ff1219bc)
+
 * Create a new component named add-edit-event inside events
 
 ```javascript
  ng g component events/add-edit-event
 ```
 
+[[Commit 61]](https://github.com/pacobull/open-events-front/commit/a7e85bc0577cf7ae5b62be8b319d01688d36411b)
 
 * Copy and paste the following code in add-edit-event.component.html. As you can see, we are using a form an the <a href="https://material.angular.io/components/form-field/overview">mat-form-field</a> form Angular Material. The form is linked to 'addEditForm', a variable of type FormGroup declared in the controller, that will share its properties with the form fields through the formControlName. Furthermore, we have the 'save' button that will submit the form.
 
@@ -379,6 +384,8 @@ import { MatInputModule } from "@angular/material/input";
 </div>
 
 ```
+
+[[Commit 62]](https://github.com/pacobull/open-events-front/commit/732ca9f85a4307c317cac1dc8b7514498ff12fcb)
 
 * Change the add-edit-event.component.ts as following. We are reading the parameter id that we are getting through the URL and decide then if we are adding or editing a new event. Then we are creating the form 'addEditForm' (previously we need to import 'FormBuilder' and 'FormGroup' in order to declare it) and then declare and set their properties and values when required (in case that we are editing an event). Finally, we have the 'submit()' method that will add or update the event through the 'EventService'.
 
@@ -463,6 +470,8 @@ export class AddEditEventComponent implements OnInit {
 
 ```
 
+[[Commit 63]](https://github.com/pacobull/open-events-front/commit/6225a6568fb478a5859a8702832aeb4e3997a52e)
+
 * Add the following code in add-edit-event.component.scss
 
 ```css
@@ -486,6 +495,7 @@ form {
 
 ```
 
+[[Commit 64]](https://github.com/pacobull/open-events-front/commit/38d9e73823693673b960bfaa24426e388af9f5d6)
 
 
 * In event-list.component.html add a button that will redirect to add event view. As we said before, we'll pass an empty string as the parameter because in this case, we are creating a new event.
@@ -499,6 +509,9 @@ form {
   </div>
   ...
 ```
+
+[[Commit 65]](https://github.com/pacobull/open-events-front/commit/e97e99afe8688b4ed2a9d477ce7202de0e693d33)
+
 * Add the addEditEvent route in app-routing.module.ts
 ```javascript
 import { AddEditEventComponent } from "./events/add-edit-event/add-edit-event.component";
@@ -510,6 +523,7 @@ const routes: Routes = [
   ...
 ```
 
+[[Commit 66]](https://github.com/pacobull/open-events-front/commit/84e4b5b7ea93a32018990bc1c880ae09261685f4)
 
 
 * Save all the changes and try it out. You should be able to create and edit events. 
@@ -533,6 +547,8 @@ const routes: Routes = [
       ...
 ```
 
+[[Commit 67]](https://github.com/pacobull/open-events-front/commit/e0109bbac36d3ed24c7ccee09fe34da3f05599b6)
+
 * Then in the event.service.ts include the 'deleteEvent' method that will use the DELETE method to remove the event from the db. 
 
 ```javascript
@@ -549,6 +565,8 @@ const routes: Routes = [
   }
 ```
 
+[[Commit 68]](https://github.com/pacobull/open-events-front/commit/dacda68037d9f5db1f94b1eb190edf87e964f437)
+
 * Finally, in the event-details.component.ts add the delete event method.
 
 ```javascript
@@ -563,7 +581,7 @@ constructor(
 ) {}
 ...
  ngOnInit() {
-    const id = this.route.snapshot.params["id"];
+    const id = this.route.snapshot.params.id;
     this.eventService.getEvent(id).subscribe((event: Event) => {
       console.log(event);
       this.event = event;
@@ -580,6 +598,7 @@ constructor(
   ...
   ```
 
+[[Commit 69]](https://github.com/pacobull/open-events-front/commit/580dda07f4faa4931f96e1e21cc25fd9182309d7)
 
 Save all the changes. The application should allow you to delete events now.
 

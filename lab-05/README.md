@@ -938,10 +938,10 @@ The *login.component.ts* will be:
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
-import { UserService } from "../core/user.service";
-import { User } from "../models/user";
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../../core/user.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'oevents-login',
@@ -964,24 +964,26 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.loginForm = this.fb.group({
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     });
   }
 
   onSubmit() {
     this.userService.login(this.loginForm.value).subscribe((res: any) => {
-      console.log(res)
-      if(res.email) {
-        this.router.navigate(["/events"]);
+      console.log(res);
+      if (res.email) {
+        this.router.navigate(['/events']);
       } else {
         this.msgs = res;
       }
-    }, err => this.msgs = 'Email not found.')
+    }, err => this.msgs = 'Email not found.');
   }
 
 }
 ```
+
+[[Commit 75]](https://github.com/pacobull/open-events-front/commit/d4c219f5237037cf14d7d9e6c35790ff20195e16)
 
 Note how we manage the messages and errors that come from the service. If the email is not present in db.json, the service will throw an error and this will be processed by our subscription:
 
@@ -1088,6 +1090,8 @@ With this new components we can sign up and login in the app... but before we ne
 }
 ```
 
+[[Commit 76]](https://github.com/pacobull/open-events-front/commit/47a39652f2e7b21743da0b0873af3133c349bbfd)
+
 > **_Side Note:_**  The real authorization and authentication process is different from this as we already said before, but a suicide security risk is to store the password a plain view like we are doing in our db.json.
 
 Now you already could try the login/signup process. The next step will be to create some mechanism to inform if the user is logged in or not.
@@ -1121,9 +1125,9 @@ The *toolbar.component.ts* component will be:
 
 ```javascript
 import { Component, DoCheck } from '@angular/core';
-import { User } from "../models/user";
-import { UserService } from "../core/user.service";
-import { Router } from "@angular/router";
+import { User } from '../models/user';
+import { UserService } from '../core/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'oevents-toolbar',
@@ -1145,15 +1149,15 @@ export class ToolbarComponent implements DoCheck {
 
   checkUser() {
     this.isAuthenticated = this.userService.checkUser();
-    if(this.isAuthenticated) {
-      this.user = JSON.parse(localStorage.getItem("user"));
+    if (this.isAuthenticated) {
+      this.user = JSON.parse(localStorage.getItem('user'));
     }
   }
 
   logout() {
     this.userService.logout();
     this.isAuthenticated = false;
-    this.router.navigate(["/home"]);
+    this.router.navigate(['/home']);
   }
 
 }
@@ -1176,6 +1180,8 @@ To complete the work, we need to change the *toolbar.component.html* view:
   <a *ngIf="isAuthenticated" mat-button (click)="logout()">{{user.email}} - Logout</a>
 </mat-toolbar>
 ```
+
+[[Commit 77]](https://github.com/pacobull/open-events-front/commit/b979b943ee48f6aea15d3757aae8e8f676d9e9ab)
 
 We've changed the *login* link and added the email/logout link. They are alternatively showed depending on the *isAuthenticated* variable from the previously seen *toolbar.component.ts*.
 

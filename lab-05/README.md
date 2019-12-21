@@ -1209,8 +1209,8 @@ import { AuthGuard } from "./core/auth-guard.service"; // <-- NEW
 
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { EventListComponent } from "./events/event-list/event-list.component";
-import { ProfileComponent } from "./profile/profile.component";
-import { LoginComponent } from "./login/login.component";
+import { ProfileComponent } from './profile/profile/profile.component';
+import { LoginComponent } from './login/login/login.component';
 import { SignupComponent } from "./login/signup/signup.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { EventDetailsComponent } from "./events/event-details/event-details.component";
@@ -1271,6 +1271,8 @@ export class AuthGuard implements CanActivate {
 
 }
 ```
+
+[[Commit 78]](https://github.com/pacobull/open-events-front/commit/4aa4f540463667bdd9ff70935a89d54827327eb7)
 
 We realize that is an injectable service (note *@Injectable*) and we have to implement an interface for the *canActivate* guards:
 
@@ -1336,14 +1338,16 @@ const routes: Routes = [
 export class AppRoutingModule {}
 ```
 
+[[Commit 79]](https://github.com/pacobull/open-events-front/commit/0ee6eca4b6e6309c5ca15a697316b2d8b60a6f68)
+
 Now, the profile component files will be:
 
 The profile.component.ts file;
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
-import { UserService } from "../core/user.service";
-import { User } from '../models/user';
+import { UserService } from '../../core/user.service';
+import { User } from '../../models/user';
 
 
 @Component({
@@ -1405,6 +1409,7 @@ The profile.component.scss file;
 }
 ```
 
+[[Commit 80]](https://github.com/pacobull/open-events-front/commit/30303206107ab81b32c4239a41671d2068e652be)
 
 > **_Side Note:_** Don't worry about the app look and feel. We will make a complete re-styling in the future.
 

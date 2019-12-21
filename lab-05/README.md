@@ -641,6 +641,8 @@ import { SignupComponent } from './signup/signup.component'; //<-- NEW
 export class LoginModule { }
 ```
 
+[[Commit 70]](https://github.com/pacobull/open-events-front/commit/2a92a8735fc6c51ae58c89fecce4c4c403d2a47b)
+
 In this file, one more thing happened. In order to have access to other components from SharedModule (as Angular Material) we've imported the SharedModule too.
 
 Although the login/signup process is simple in our app (and ready only for local development), if you don't have enough experience, it can be a bit messy so the following steps will be explained step by step:
@@ -652,6 +654,8 @@ As the best practices said... we are going to create a new service to manage the
 ```bash
 ng g service core/user 
 ```
+
+[[Commit 71]](https://github.com/pacobull/open-events-front/commit/cbddf75ca41a8e2f19c2b490cea5034e1e7923c8)
 
 We will need the next methods:
 
@@ -803,6 +807,8 @@ export interface User {
 }
 ```
 
+[[Commit 72]](https://github.com/pacobull/open-events-front/commit/bb9734a6218f4d4c417800ac5f7f58f1dfdb2934)
+
 ### Signup component
 
 We already have our service ready to be used in any place. But first, we need to prepare for managing our private zones with a signup process. 
@@ -852,6 +858,8 @@ export class SignupComponent implements OnInit {
 
 }
 ```
+
+[[Commit 73]](https://github.com/pacobull/open-events-front/commit/7282b752e1567156404a8a7903dc56406f686551)
 
 Note how we inject the *UserService* service to use the *signup* method and call to the appropriate endpoint to create a new user in our *db.json*. We send to this endpoint the data collected from the user form (*this.signupForm.value*). After that, we send the user to the *events* view.
 
@@ -916,6 +924,8 @@ import { SignupComponent } from "./login/signup/signup.component";
 { path: "signup", component: SignupComponent },
 ...
 ```
+
+[[Commit 74]](https://github.com/pacobull/open-events-front/commit/f9b8fe4feebeb9eec159bc4bf0ea2bccdf680cb4)
 
 > **_Side Note:_**  If you aren't sure about how to do it, you always can have a look at the app folder of this lab.
 

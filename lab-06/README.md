@@ -509,6 +509,8 @@ import { User } from "../../models/user"; // <-- NEW
   }
 ```
 
+[[Commit 89]](https://github.com/pacobull/open-events-front/commit/84942dffa16f79a5d0294d28673f141fb73f1961)
+
 We will use the MatSlideToggleModule component in the *event-list.component.html" view since is the place where our events are showed and so we will place our slide toggle in the same location.
 
 ```html
@@ -560,6 +562,8 @@ We will use the MatSlideToggleModule component in the *event-list.component.html
   </div>
 </div>
 ```
+
+[[Commit 90]](https://github.com/pacobull/open-events-front/commit/9ca6d8843f459fa68a99c4887afa625a8d7811ce)
 
 The *NEW/END NEW* block contains the new component. We store the model in *slideMyEvents* which tells us if the slide is activated or not and we run the *myEventsChange* method when the user changes the slide. Later we'll see this method in detail, now you can see the aspect of our new feature in the list events view.
 
@@ -618,6 +622,8 @@ import "hammerjs";
 export class SharedModule {}
 ```
 
+[[Commit 91]](https://github.com/pacobull/open-events-front/commit/3e98834d95f5afe509898f2431051f24c6b579bc)
+
 Now we're going to create the new service's method to get the filtered data in our *event.service.ts* (insert this new method). 
 
 ```javascript
@@ -633,9 +639,11 @@ getFilteredEvents(filter): Observable<any> {
       catchError(this.handleError)
     );
   }
-
+  
 ...
 ```
+
+[[Commit 92]](https://github.com/pacobull/open-events-front/commit/a8ef67fff8e055aba81715d6f9eee3c317ca1ccc)
 
 We add our new filter in the *get* url, just after *events* part. This filter is a *filter* variable coming from the call and we will see his aspect later.
 
@@ -735,6 +743,8 @@ export function reducer(state: State = initialState, action: layout.Actions): St
 }
 ```
 
+[[Commit 93]](https://github.com/pacobull/open-events-front/commit/b9cd705864f06941b0f6f25462448a6b3ee7e4ff)
+
 Now our reducer has to manage these three situations when those actions are launched. 
 
 Our new state slice has three properties too (this is only a coincidence).
@@ -754,6 +764,8 @@ Install the ngrx/effects:
 ```bash
 npm install @ngrx/effects --save
 ```
+
+[[Commit 94]](https://github.com/pacobull/open-events-front/commit/5b6b14a9139b3ed762420fb58e4f63abd1efc84e)
 
 We'll see the big picture with the next file:
 
@@ -787,6 +799,8 @@ export class LayoutEffects {
   )
 }
 ```
+
+[[Commit 95]](https://github.com/pacobull/open-events-front/commit/599633076bdde637536fcf2d058b5228de357b09)
 
 After the usual imports needed, we have the important thing.  
 
@@ -828,6 +842,9 @@ export const reducers: ActionReducerMap<State> = {
   layout: layoutReducer.reducer // <-- NEW
 }
 ```
+
+[[Commit 96]](https://github.com/pacobull/open-events-front/commit/411734790b57a8b112b4a47a46b57bc117ffeba5)
+
  Now in our *app.module.ts*:
 
  ```javascript
@@ -853,14 +870,12 @@ import { LayoutEffects } from './store/layout/layout.effects'; // <-- NEW
 import { AppComponent } from "./app.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ToolbarComponent,
-    PageNotFoundComponent
+    ToolbarComponent
   ],
   imports: [
     CoreModule,
@@ -878,6 +893,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 })
 export class AppModule {}
  ```
+
+[[Commit 97]](https://github.com/pacobull/open-events-front/commit/e19e165a5c7810f3dbc60bfff501cadcf6548a90)
 
  This is the way to say that the store takes into account the new Effects. Now we're ready to set up our new actions to launch the effects.
 
@@ -954,8 +971,9 @@ export class EventListComponent implements OnInit {
   ngOnDestroy() {}
   // END NEW
 }
-
 ```
+
+[[Commit 98]](https://github.com/pacobull/open-events-front/commit/b0e2168cb7565855da81f4a8fdf3c4eb4f7ae078)
 
 The *myEventsChange* is linked to the slide toggle in the view so this is the method to launch our new action with effect. There isn't any new in this code. We dispatch the *GetFilteredEvents* action as we have seen with the login case. Note the filter format to add it to the get URL *addedBy= + userMail*, this will be the *payload* of the action.
 
@@ -1028,6 +1046,7 @@ export class EventListComponent implements OnInit, OnDestroy {  // <-- NEW
   }
 ```
 
+[[Commit 99]](https://github.com/pacobull/open-events-front/commit/7f829fd52569d9fb7e82a829278e94d48df41fdc)
 
 <br/>
 <br/>

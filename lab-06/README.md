@@ -98,6 +98,8 @@ Now is moment to install the NgRx library.
 npm install @ngrx/store --save
 ```
 
+[[Commit 81]](https://github.com/pacobull/open-events-front/commit/f8f07c9a9a5e7817421902ef095ee7985fe63aad)
+
 ## Central store to login
 
 We will put every action that makes a change in the state into the store. We will add the action "logged" to change the toolbar link (login/logout) and to inform the other parts of the app (the ones that we are interested in) that the user is logged in. We won't see any difference in the view but the way to manage this information will change in a more logical manner.
@@ -119,6 +121,8 @@ export class Logged implements Action {
 
 export type Actions = Logged;
 ```
+
+[[Commit 82]](https://github.com/pacobull/open-events-front/commit/c68fd6f8018f975a825e02ac996f8c72b3d58f4c)
 
 As you see there is an import and three exports. You already know the purpose of the import: implements our action class with the Action interface.
 
@@ -162,6 +166,8 @@ export function reducer(state: State = initialState, action: login.Actions): Sta
 }
 ```
 
+[[Commit 83]](https://github.com/pacobull/open-events-front/commit/e3367881e3ce0d764b28821e7be719d534bf1feb)
+
 First, we import all exported members from *login.actions.ts*, after that, we define our state for login slice as an interface with the *logged* property which we want to check.
 
 > **_Side Note:_** Slice is the name to refer to a portion of state. Remember that the state is one and unique, we only split it to make it more manageable.
@@ -196,6 +202,8 @@ export const reducers: ActionReducerMap<State> = {
 }
 ```
 
+[[Commit 84]](https://github.com/pacobull/open-events-front/commit/44df667d056e031239d69aab4608370a62d5e998)
+
 We use the *ActionReducerMap* type to map our *loginReducer*. From this point, our store slice to login will be named in the app as *login* and we call it with this name. Also, we specify the type with an interface. We export it as reducers and we import it from *app.module.ts* to integrate our store with the app using the *AtoreModule* of ngrx.
 
 
@@ -222,14 +230,12 @@ import { reducers } from './app.store'; // <-- NEW
 import { AppComponent } from "./app.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ToolbarComponent,
-    PageNotFoundComponent
+    ToolbarComponent
   ],
   imports: [
     CoreModule,
@@ -246,6 +252,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 })
 export class AppModule {}
 ```
+
+[[Commit 85]](https://github.com/pacobull/open-events-front/commit/ecaf39c2047aeffc66236035b5fd6e18f2ff1a94)
 
 At this moment we have the app listening to actions of type *login* and when this happens, the store will change our state automatically and will emit this new store to other subscribers. To do this in the login process first we will do that our app dispatch an action when the user is set up and after we will subscribe to this action in the parts of the app we want to manage the login.
 
@@ -276,6 +284,8 @@ export class AppComponent {
    }
 }
 ```
+
+[[Commit 86]](https://github.com/pacobull/open-events-front/commit/0080a35b1464b6038dcbd60e7aa0255466fb5e1e)
 
 First, we need to import the Store class (which extends from an Observable) which gives us the *dispatch* method. We also need our actions and the UserService to ask it about the login of the user. After that, in the constructor we inject both the UserService and the Store class and we check in the user is logged in through the *checkUser* method. If it's true we dispatch a new action of type Logged with the payload "true". Otherwise, we dispatch the action with the "false" payload.
 
@@ -375,6 +385,8 @@ export class UserService {
 
 ```
 
+[[Commit 87]](https://github.com/pacobull/open-events-front/commit/b0e290e8775ed8d423d824d117fc8bee3e59f526)
+
 Look at this line:
 
 ```javascript
@@ -404,7 +416,7 @@ import * as login from '../store/login/login.actions';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnDestroy {
   user: User;
   isAuthenticated: boolean;
   subscriptionLogin: SubscriptionLike;
@@ -436,6 +448,8 @@ export class ToolbarComponent {
   }
 }
 ```
+
+[[Commit 88]](https://github.com/pacobull/open-events-front/commit/5d27c0bb3d71dac1e54a7f248cca927942257a41)
 
 We will subscribe to the store from the constructor typically. To do this we need to *select* our state slice *login* and subscribe to it through a *pipe* method of the store class. With this we always are subscribed to the store from the component is started. This means that the component is listening for changes after even destroyed. To avoid this behaviour (normally not desired) we save the subscription in a variable subscriptionLogin in order to use it in the destroy process, that is, the *ngOnDestroy* hook of our component.
 
